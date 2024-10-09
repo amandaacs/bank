@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #DEDEF8;
+}
+
+.form-container {
+  width: 70vw;
+}
+
+.title, .slogan {
+  text-align: center;
+}
+
+.btn {
+  width: 100%;
+  background-color: #20207F;
+}
+
+.btn:hover {
+  background-color: #3030bb !important;
+}
+
+.auth-img {
+  width: 100%;
+  border-radius: 8px;
+  margin-left: -15px;
+}
+
+@media screen and (orientation: portrait) {
+  .auth-img {
+    display: none;
+  }
+  
+}
+
+.alert {
+  margin-bottom: 1.5rem;
+}
+
+.profile-card {
+  width: 60vw;
+}
+
+.avatar {
+  margin-bottom: 1.5rem;
+  height: 20vh;
+  width: 10vw;
+  font-size: 15vh;
+  background-color: #DEDEF8;
+}
+
+@media screen and (orientation: portrait) {
+  .avatar {
+    margin-bottom: 1.5rem;
+    height: 9.5vh;
+    width: 20vw;
+    font-size: 7vh;
+    background-color: #DEDEF8;
+  }
+  
+}
+
+
+.username {
+  text-transform: capitalize;
+}
+
+.text-wrap {
+  text-justify: center;
+  text-align: center;
+}
+
+.profile-btn {
+  margin-top: 1.3rem;
+  width: 100%;
+  background-color: #20207F;
+  transition: 0.2s;
+}
+
+.profile-btn:hover {
+  background-color: #3030bb !important;
+}
+.profile-btn-adm {
+  margin-top: 1.3rem;
+  width: 50%;
+  background-color: #20207F;
+  transition: 0.2s;
+  font-size: 2.2vh;
+}
+
+@media screen and (orientation: portrait) {
+  .profile-btn-adm {
+    
+    font-size: 1vh;
+
+  }
+  
+}
+
+.profile-btn-adm:hover {
+  background-color: #3030bb !important;
+}
+
+.adm-buttons {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.adm-buttons Button {
+  flex: 0 0 48%;                 
+    margin: 10px 0;
+}
+
+
+.saldo {
+  color: black;
+  font-size: 5em;
+  margin: 0;
+}
+
+.std-select {
+  width: 100%;
+}
+
+.transaction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+
+  gap: 2.5vh;
+}
+
+.transaction-balance {
+  margin-top: 10px;
+  font-size: 3vh;
+  font-weight: 700;
+}
+
+.delete-user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+
+  gap: 2.5vh;
+}
+
+.deleted-user {
+  margin-top: 10px;
+  font-size: 3vh;
+  font-weight: 600;
+  text-align: center;
+
+}
+
+.adicionar {
+  background-color: #207f43;
+}
+
+.remover {
+  background-color: #f4183c;
+  color: #fff;
+}
+.adicionar:hover {
+  background-color: #33c267 !important;
+}
+
+.remover:hover {
+  background-color: #ff4362 !important;
+}
+
