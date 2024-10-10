@@ -11,11 +11,12 @@ const Transacao = () => {
     const [selectedUserId, setSelectedUserId] = useState(null);
     const [selectedUserBalance, setSelectedUserBalance] = useState(0);
     const [amount, setAmount] = useState('');
+    const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:3000';
 
     const onChange = async (value) => {
         console.log(`selected ${value}`);
         setSelectedUserId(value);
-        const response = await fetch(`http://localhost:3000/api/users/${value}/balance`); // Fetch balance of selected user
+        const response = await fetch(`${apiUrl}/api/users/${value}/balance`); // Fetch balance of selected user
         const data = await response.json();
         setSelectedUserBalance(data.balance);
       };
@@ -30,7 +31,7 @@ const Transacao = () => {
             return;
         }
 
-        const response = await fetch(`http://localhost:3000/api/users/${selectedUserId}/transaction`, {
+        const response = await fetch(`${apiUrl}/api/users/${selectedUserId}/transaction`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -58,7 +59,7 @@ const Transacao = () => {
         const fetchUsersByRole = async () => {
             try {
                 // Fetch users with the role 'aluno'
-                const response = await fetch('http://localhost:3000/api/users/aluno'); 
+                const response = await fetch(`${apiUrl}/api/users/aluno`); 
                 const data = await response.json();
                 setUsers(data); // Update state with fetched users
             } catch (error) {
@@ -67,7 +68,7 @@ const Transacao = () => {
         };
 
         fetchUsersByRole();
-    }, []);
+    }, [apiUrl]);
 
  
   return (

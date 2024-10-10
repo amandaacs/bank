@@ -7,6 +7,7 @@ const useSignup = () => {
     const { login } = useAuth();
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(null);
+    const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:3000';
 
     const registerUser = async (values) => {
         if(values.password !== values.passwordConfirm){
@@ -15,7 +16,7 @@ const useSignup = () => {
         try {
             setError(null);
             setLoading(true);
-            const res = await fetch('http://localhost:3000/api/auth/signup', {
+            const res = await fetch(`${apiUrl}/api/auth/signup`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -11,7 +11,7 @@ const DeletarUsers = () => {
     const [selectedUserId, setSelectedUserId] = useState(null);
     const [selectedUserName, setSelectedUserName] = useState('');
     const [statusMessage, setStatusMessage] = useState('');
-    
+    const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:3000';
 
     const onChange = async (value) => {
         setSelectedUserId(value);
@@ -31,7 +31,7 @@ const DeletarUsers = () => {
             title: 'Deletar Conta?',
             content: `User: ${selectedUserName}`,
             onOk: async () => {
-                const response = await fetch(`http://localhost:3000/api/users/${selectedUserId}`, {
+                const response = await fetch(`${apiUrl}/api/users/${selectedUserId}`, {
                     method: 'DELETE',
                 });
 
@@ -63,7 +63,7 @@ const DeletarUsers = () => {
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-                const response = await fetch('http://localhost:3000/api/users/'); 
+                const response = await fetch(`${apiUrl}/api/users/`); 
                 const data = await response.json();
                 setUsers(data); 
             } catch (error) {
@@ -72,7 +72,7 @@ const DeletarUsers = () => {
         };
 
         fetchUsers();
-    }, []);
+    }, [apiUrl]);
 
  
   return (
