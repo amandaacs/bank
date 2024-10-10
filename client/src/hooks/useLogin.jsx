@@ -7,7 +7,7 @@ const useLogin = () => {
     const { login } = useAuth();
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(null);
-    const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:3000';
+    const apiUrl = process.env.REACT_APP_API_URL || 'https://bank-project-mnto.onrender.com';
 
     console.log('API URL:', apiUrl);
     const loginUser = async (values) => {
