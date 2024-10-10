@@ -7,11 +7,7 @@ const app = express();
 require('dotenv').config();
 
 //middlewares
-app.use(cors({
-    origin: 'https://bank-h2kt.onrender.com', // Update to your frontend's URL
-    credentials: true,
-}));
-
+app.use(cors());
 app.use(express.json());
  
 //mdb connection
