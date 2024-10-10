@@ -21,11 +21,13 @@ app.use('/api', userRoutes);
 
 //mongodb connection
 mongoose
-    .connect(dbURI)
-    .then(() => console.log('connected!'))
-    .catch((error) => console.error('failed to connect: ', error));
-
-
+    .connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log('Connected to MongoDB!'))
+    .catch((error) => {
+        console.error('Failed to connect:', error);
+        // Log the full error object to see more details
+        console.error('Error details:', JSON.stringify(error, null, 2));
+    });
 
 //global error handler
 app.use((err, req, res, next) => {
