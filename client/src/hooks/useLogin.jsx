@@ -9,7 +9,7 @@ const useLogin = () => {
     const [loading, setLoading] = useState(null);
     const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:3000';
 
-
+    console.log('API URL:', apiUrl);
     const loginUser = async (values) => {
         
         try {
