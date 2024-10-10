@@ -11,7 +11,7 @@ const DeletarUsers = () => {
     const [selectedUserId, setSelectedUserId] = useState(null);
     const [selectedUserName, setSelectedUserName] = useState('');
     const [statusMessage, setStatusMessage] = useState('');
-    const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:3000';
+    const apiUrl = process.env.REACT_APP_API_URL || 'https://bank-project-mnto.onrender.com';
 
     const onChange = async (value) => {
         setSelectedUserId(value);
