@@ -6,14 +6,24 @@ const userRoutes = require('../server/routes/userRoutes')
 const app = express();
 require('dotenv').config();
 
+const corsOptions = {
+    origin: 'https://your-frontend-url.onrender.com', // Replace with your actual frontend URL
+    credentials: true,
+};
+
+app.use(cors(corsOptions));
 //middlewares
-app.use(cors());
+
 app.use(express.json());
  
 //mdb connection
 const dbURI = process.env.MONGODB_URI;
 
 //route
+
+app.get('/', (req, res) => {
+    res.send('API is running!');
+});
 app.use('/api/auth', authRoute);
 app.use('/api', userRoutes);
 
@@ -28,6 +38,8 @@ mongoose
         // Log the full error object to see more details
         console.error('Error details:', JSON.stringify(error, null, 2));
     });
+
+
 
 //global error handler
 app.use((err, req, res, next) => {
