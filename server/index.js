@@ -7,7 +7,7 @@ const app = express();
 require('dotenv').config();
 
 const corsOptions = {
-    origin: 'https://your-frontend-url.onrender.com', // Replace with your actual frontend URL
+    origin: 'https://bank-h2kt.onrender.com', // Replace with your actual frontend URL
     credentials: true,
 };
 
