@@ -16,7 +16,7 @@ const Transacao = () => {
     const onChange = async (value) => {
         console.log(`selected ${value}`);
         setSelectedUserId(value);
-        const response = await fetch(`${apiUrl}/api/users/${value}/balance`); // Fetch balance of selected user
+        const response = await fetch(`${apiUrl}/api/users/${value}/balance`); 
         const data = await response.json();
         setSelectedUserBalance(data.balance);
       };
@@ -36,13 +36,13 @@ const Transacao = () => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ amount: transactionAmount, type }), // type can be 'add' or 'remove'
+            body: JSON.stringify({ amount: transactionAmount, type }), 
         });
 
         if (response.ok) {
             const updatedBalance = type === 'add' ? selectedUserBalance + transactionAmount : selectedUserBalance - transactionAmount;
             setSelectedUserBalance(updatedBalance);
-            setAmount(''); // Clear input field
+            setAmount(''); 
         } else {
             alert('Transaction failed. Please try again.');
         }
@@ -58,10 +58,10 @@ const Transacao = () => {
     useEffect(() => {
         const fetchUsersByRole = async () => {
             try {
-                // Fetch users with the role 'aluno'
+               
                 const response = await fetch(`${apiUrl}/api/users/aluno`); 
                 const data = await response.json();
-                setUsers(data); // Update state with fetched users
+                setUsers(data); 
             } catch (error) {
                 console.error('Failed to fetch users:', error);
             }
@@ -82,8 +82,8 @@ const Transacao = () => {
             onChange={onChange}
             onSearch={onSearch}
             options={users.map(user => ({
-                value: user._id, // Use user ID as the value
-                label: user.name, // Display user name
+                value: user._id, 
+                label: user.name, 
             }))}
         />
         {selectedUserId && (
